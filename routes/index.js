@@ -1,9 +1,9 @@
-const Express = require('express');
+const express = require('express');
 
 const exampleController = require('../controllers/exampleController');
 const { catchErrors } = require('../handlers/errorHandler');
 
-const router = Express.Router();
+const router = express.Router();
 
 router.get('/', exampleController.get, catchErrors(exampleController.save));
 

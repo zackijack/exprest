@@ -1,16 +1,16 @@
-const Auth = require('basic-auth');
-const Compare = require('tsscmp');
+const auth = require('basic-auth');
+const compare = require('tsscmp');
 
 exports.validation = (req, res, next) => {
   const username = process.env.APP_USERNAME;
   const password = process.env.APP_PASSWORD;
-  const credentials = Auth(req);
+  const credentials = auth(req);
 
   function validate(name, pass) {
     let valid = true;
 
-    valid = Compare(name, username) && valid;
-    valid = Compare(pass, password) && valid;
+    valid = compare(name, username) && valid;
+    valid = compare(pass, password) && valid;
 
     return valid;
   }

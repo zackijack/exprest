@@ -1,6 +1,6 @@
-const Mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-const Example = Mongoose.model('Example');
+const Example = mongoose.model('Example');
 
 exports.get = async (req, res, next) => {
   if (!req.query.sample) {

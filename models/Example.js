@@ -1,8 +1,8 @@
-const Mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-Mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
-const ExampleSchema = new Mongoose.Schema(
+const ExampleSchema = new mongoose.Schema(
   {
     sample: {
       type: String,
@@ -12,4 +12,4 @@ const ExampleSchema = new Mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = Mongoose.model('Example', ExampleSchema);
+module.exports = mongoose.model('Example', ExampleSchema);

@@ -1,12 +1,12 @@
-const Mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // Import environment variables
 require('dotenv').config({ path: '.env' });
 
 // Connect to database and handle any bad connections
-Mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
-Mongoose.connect(process.env.DATABASE);
-Mongoose.connection.on('error', err => {
+mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
+mongoose.connect(process.env.DATABASE);
+mongoose.connection.on('error', err => {
   console.error(`MongoDB connection error ${err}`);
 });
 
